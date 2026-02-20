@@ -752,7 +752,6 @@ function generateIEEE($pub, $index) {
                                 <thead>
                                     <tr>
                                         <th style="width: 50px;">#</th>
-                                        <th style="width: 80px;">Year</th>
                                         <th style="width: 120px;">Type</th>
                                         <th>Publication Details</th>
                                         <th style="width: 120px;">Links</th>
@@ -761,7 +760,16 @@ function generateIEEE($pub, $index) {
                                 <tbody>
                                     <?php 
                                     $table_index = 1;
-                                    foreach ($publications as $pub): 
+                                    foreach ($grouped_publications as $year => $year_pubs): 
+                                    ?>
+                                    <tr class="year-row" style="background: rgba(14, 165, 233, 0.05);">
+                                        <td colspan="4" style="padding: var(--space-3) var(--space-5); font-weight: 700; color: var(--accent-cyan); font-size: 15px; border-bottom: 2px solid var(--border-color);">
+                                            <?php echo htmlspecialchars($year); ?> 
+                                            <span style="font-weight: 400; font-size: 12px; color: var(--text-muted); margin-left: 8px;">(<?php echo count($year_pubs); ?> publications)</span>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                        foreach ($year_pubs as $pub):  
                                         $type = strtolower($pub['type'] ?? 'other');
                                         $type_class = '';
                                         $filter_type = 'other';
@@ -776,9 +784,8 @@ function generateIEEE($pub, $index) {
                                         $authors = preg_replace('/,\s*,/', ',', $authors);
                                         $authors = trim($authors, ', ');
                                     ?>
-                                    <tr class="pub-entry" data-type="<?php echo $filter_type; ?>" data-id="<?php echo $pub['id']; ?>">
+                                    <tr class="pub-entry" data-type="<?php echo $filter_type; ?>" data-id="<?php echo $pub['id']; ?>" data-year="<?php echo $year; ?>">
                                         <td>[<?php echo $table_index++; ?>]</td>
-                                        <td style="color: var(--text-secondary);"><?php echo $pub['year'] ?: 'N/A'; ?></td>
                                         <td>
                                             <?php if ($type_class): ?>
                                                 <span class="pub-type-tag <?php echo $type_class; ?>"><?php echo htmlspecialchars($type_label); ?></span>
@@ -819,7 +826,11 @@ function generateIEEE($pub, $index) {
                                             </div>
                                         </td>
                                     </tr>
-                                    <?php endforeach; ?>
+                                    </tr>
+                                    <?php 
+                                        endforeach; 
+                                    endforeach; 
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -893,6 +904,16 @@ function generateIEEE($pub, $index) {
                 const visible = section.querySelectorAll('.pub-entry:not(.hidden)').length;
                 section.classList.toggle('hidden', visible === 0);
             });
+            // Hide empty year headers in table view
+            document.querySelectorAll('.year-row').forEach(row => {
+                const year = row.querySelector('td').textContent.trim().split(' ')[0];
+                const activePubsInYear = document.querySelectorAll(`tr.pub-entry[data-year="${year}"]:not(.hidden)`).length;
+                if (activePubsInYear === 0) {
+                    row.style.display = 'none';
+                } else {
+                    row.style.display = 'table-row';
+                }
+            });
         }
         
         // Search functionality
@@ -908,6 +929,17 @@ function generateIEEE($pub, $index) {
             document.querySelectorAll('.year-section').forEach(section => {
                 const visible = section.querySelectorAll('.pub-entry:not(.hidden)').length;
                 section.classList.toggle('hidden', visible === 0);
+            });
+            
+            // Hide empty year headers in table view
+            document.querySelectorAll('.year-row').forEach(row => {
+                const year = row.querySelector('td').textContent.trim().split(' ')[0];
+                const activePubsInYear = document.querySelectorAll(`tr.pub-entry[data-year="${year}"]:not(.hidden)`).length;
+                if (activePubsInYear === 0) {
+                    row.style.display = 'none';
+                } else {
+                    row.style.display = 'table-row';
+                }
             });
         });
         
