@@ -105,7 +105,8 @@ class SerpApiPublicationFetcher {
         
         // Extract author name for search
         $cleanName = $this->cleanAuthorName($member['name']);
-        echo "  Search query: {$cleanName}\n";
+        $searchQuery = 'author:"' . $cleanName . '"';
+        echo "  Search query: {$searchQuery}\n";
         
         $addedCount = 0;
         $skippedCount = 0;
@@ -114,7 +115,7 @@ class SerpApiPublicationFetcher {
         
         // Fetch multiple pages if needed
         while (true) {
-            $results = $this->fetchPublications($cleanName, $start, $numResults);
+            $results = $this->fetchPublications($searchQuery, $start, $numResults);
             
             if (!$results || empty($results['organic_results'])) {
                 if ($start === 0) {

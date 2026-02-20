@@ -777,7 +777,10 @@ $teamMembers = $db->query("SELECT id, name, google_scholar, is_active FROM team_
                     isBusy = false;
                     return;
                 }
-                queries = researchers.map(n => ({ query: n.replace(/^(Prof\.|Dr\.|Eng\.)\s*/g, ''), label: n }));
+                queries = researchers.map(n => {
+                    const cleanName = n.replace(/^(Prof\.|Dr\.|Eng\.)\s*/g, '');
+                    return { query: 'author:"' + cleanName + '"', label: n };
+                });
             } else {
                 const q = formData.get('query')?.trim();
                 if (!q) {
