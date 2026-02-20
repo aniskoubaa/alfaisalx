@@ -229,7 +229,12 @@ foreach ($organicResults as $pub) {
     
     // Extract authors
     $authors = $query;
-    if (isset($pub['publication_info']['summary'])) {
+    if (isset($pub['publication_info']['authors']) && is_array($pub['publication_info']['authors'])) {
+        $authorNames = array_map(function($a) { return $a['name']; }, $pub['publication_info']['authors']);
+        if (!empty($authorNames)) {
+            $authors = implode(', ', $authorNames);
+        }
+    } elseif (isset($pub['publication_info']['summary'])) {
         $parts = explode(' - ', $pub['publication_info']['summary']);
         if (count($parts) > 0) {
             $authors = trim($parts[0]);

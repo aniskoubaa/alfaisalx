@@ -460,8 +460,74 @@ function generateIEEE($pub, $index) {
         }
         
         /* Hidden for filter */
-        .pub-entry.hidden { display: none; }
-        .year-section.hidden { display: none; }
+        .pub-entry.hidden { display: none !important; }
+        .year-section.hidden { display: none !important; }
+        
+        /* View Toggle System */
+        .view-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--bg-card-solid);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .view-btn.active, .view-btn:hover {
+            background: var(--accent-cyan);
+            color: white;
+            border-color: var(--accent-cyan);
+        }
+        
+        .view-container { display: none; }
+        .view-container.active { display: block; }
+        
+        /* Table View Specifics */
+        .pub-table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+        }
+        .pub-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 14px;
+        }
+        .pub-table th {
+            padding: var(--space-4) var(--space-5);
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+            white-space: nowrap;
+        }
+        .pub-table td {
+            padding: var(--space-4) var(--space-5);
+            border-bottom: 1px solid var(--border-subtle);
+            vertical-align: top;
+            color: var(--text-primary);
+        }
+        tr.pub-entry {
+            display: table-row; /* override default flex */
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        tr.pub-entry:hover {
+            transform: none;
+            box-shadow: none;
+            background: var(--bg-subtle);
+        }
         
         @media (max-width: 768px) {
             .pub-controls {
@@ -535,7 +601,15 @@ function generateIEEE($pub, $index) {
                         </a>
                     </div>
                     
-                    <div style="display: flex; gap: var(--space-3); align-items: center;">
+                    <div style="display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap;">
+                        <div class="view-toggles" style="display: flex; gap: var(--space-2);">
+                            <button class="view-btn active" id="btn-card-view" onclick="setView('card')" title="Card View">
+                                <i class="fas fa-th-large"></i>
+                            </button>
+                            <button class="view-btn" id="btn-table-view" onclick="setView('table')" title="Table View">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
                         <div class="search-box">
                             <i class="fas fa-search"></i>
                             <input type="text" id="searchInput" placeholder="Search...">
@@ -559,6 +633,7 @@ function generateIEEE($pub, $index) {
                     </div>
                 <?php else: ?>
                     
+                    <div id="card-view-container" class="view-container active">
                     <?php 
                     $global_index = 1;
                     foreach ($grouped_publications as $year => $year_pubs): 
@@ -669,6 +744,86 @@ function generateIEEE($pub, $index) {
                             </div>
                         </div>
                     <?php endforeach; ?>
+                    </div> <!-- End Card View Container -->
+                    
+                    <div id="table-view-container" class="view-container">
+                        <div class="pub-table-wrapper">
+                            <table class="pub-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50px;">#</th>
+                                        <th style="width: 80px;">Year</th>
+                                        <th style="width: 120px;">Type</th>
+                                        <th>Publication Details</th>
+                                        <th style="width: 120px;">Links</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php 
+                                    $table_index = 1;
+                                    foreach ($publications as $pub): 
+                                        $type = strtolower($pub['type'] ?? 'other');
+                                        $type_class = '';
+                                        $filter_type = 'other';
+                                        $type_label = '';
+                                        if (strpos($type, 'journal') !== false) { $type_class = 'tag-journal'; $filter_type = 'journal'; $type_label = 'Journal'; }
+                                        elseif (strpos($type, 'conference') !== false) { $type_class = 'tag-conference'; $filter_type = 'conference'; $type_label = 'Conference'; }
+                                        elseif (strpos($type, 'book') !== false) { $type_class = 'tag-book'; $filter_type = 'book'; $type_label = 'Book'; }
+                                        
+                                        $authors = $pub['authors'];
+                                        $authors = str_replace(['…', '...'], '', $authors);
+                                        $authors = preg_replace('/^,\s*/', '', $authors);
+                                        $authors = preg_replace('/,\s*,/', ',', $authors);
+                                        $authors = trim($authors, ', ');
+                                    ?>
+                                    <tr class="pub-entry" data-type="<?php echo $filter_type; ?>" data-id="<?php echo $pub['id']; ?>">
+                                        <td>[<?php echo $table_index++; ?>]</td>
+                                        <td style="color: var(--text-secondary);"><?php echo $pub['year'] ?: 'N/A'; ?></td>
+                                        <td>
+                                            <?php if ($type_class): ?>
+                                                <span class="pub-type-tag <?php echo $type_class; ?>"><?php echo htmlspecialchars($type_label); ?></span>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td>
+                                            <div class="pub-title-compact" style="margin-bottom: 6px;">
+                                                <?php if ($pub['url']): ?>
+                                                    <a href="<?php echo htmlspecialchars($pub['url']); ?>" target="_blank"><?php echo htmlspecialchars($pub['title']); ?></a>
+                                                <?php else: ?>
+                                                    <span><?php echo htmlspecialchars($pub['title']); ?></span>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="pub-authors-compact" style="margin-bottom: 6px; font-size: 13px;">
+                                                <i class="fas fa-users"></i> <?php echo htmlspecialchars($authors); ?>
+                                            </div>
+                                            <?php if ($pub['venue']): ?>
+                                            <div style="font-size: 13px; color: var(--text-muted);">
+                                                <i class="fas fa-book-open" style="margin-right: 4px;"></i> <em><?php echo htmlspecialchars($pub['venue']); ?></em>
+                                            </div>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td>
+                                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                                <?php if ($pub['url']): ?>
+                                                    <a href="<?php echo htmlspecialchars($pub['url']); ?>" target="_blank" class="pub-link">
+                                                        <i class="fas fa-external-link-alt"></i> Paper
+                                                    </a>
+                                                <?php endif; ?>
+                                                <?php if ($pub['doi']): ?>
+                                                    <a href="https://doi.org/<?php echo htmlspecialchars($pub['doi']); ?>" target="_blank" class="pub-link">
+                                                        <i class="fas fa-link"></i> DOI
+                                                    </a>
+                                                <?php endif; ?>
+                                                <a href="#" class="pub-link cite-link" onclick="copySingleBibtex(<?php echo $pub['id']; ?>); return false;">
+                                                    <i class="fas fa-quote-right"></i> Cite
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- End Table View Container -->
                     
                 <?php endif; ?>
                 
@@ -705,6 +860,14 @@ function generateIEEE($pub, $index) {
         let currentExportFormat = 'bibtex';
         let currentExportContent = '';
         
+        function setView(view) {
+            document.querySelectorAll('.view-container').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+            
+            document.getElementById(view + '-view-container').classList.add('active');
+            document.getElementById('btn-' + view + '-view').classList.add('active');
+        }
+
         // Filter functionality
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
@@ -725,7 +888,7 @@ function generateIEEE($pub, $index) {
                 }
             });
             
-            // Hide empty year sections
+            // Hide empty year sections in card view
             document.querySelectorAll('.year-section').forEach(section => {
                 const visible = section.querySelectorAll('.pub-entry:not(.hidden)').length;
                 section.classList.toggle('hidden', visible === 0);
@@ -741,7 +904,7 @@ function generateIEEE($pub, $index) {
                 entry.classList.toggle('hidden', !text.includes(query));
             });
             
-            // Hide empty year sections
+            // Hide empty year sections in card view
             document.querySelectorAll('.year-section').forEach(section => {
                 const visible = section.querySelectorAll('.pub-entry:not(.hidden)').length;
                 section.classList.toggle('hidden', visible === 0);

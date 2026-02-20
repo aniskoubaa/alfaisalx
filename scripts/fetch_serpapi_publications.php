@@ -291,6 +291,13 @@ class SerpApiPublicationFetcher {
      * Extract authors from publication
      */
     private function extractAuthors($pub, $memberName) {
+        if (isset($pub['publication_info']['authors']) && is_array($pub['publication_info']['authors'])) {
+            $authorNames = array_map(function($a) { return $a['name']; }, $pub['publication_info']['authors']);
+            if (!empty($authorNames)) {
+                return implode(', ', $authorNames);
+            }
+        }
+        
         if (isset($pub['publication_info']['summary'])) {
             $summary = $pub['publication_info']['summary'];
             // Usually format is: "Authors - Title, Year - Source"
