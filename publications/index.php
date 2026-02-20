@@ -215,108 +215,128 @@ function generateIEEE($pub, $index) {
             margin-left: var(--space-2);
         }
         
-        /* Compact publication item */
+        /* Modern Card publication item */
         .pub-list {
-            counter-reset: pub-counter;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
         }
         
         .pub-entry {
             display: flex;
+            flex-direction: column;
             gap: var(--space-3);
-            padding: var(--space-3) 0;
-            border-bottom: 1px solid var(--border-subtle);
-            font-size: 14px;
-            line-height: 1.5;
-            transition: background 0.2s;
+            padding: var(--space-5);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
         }
         
         .pub-entry:hover {
-            background: var(--bg-subtle);
-            margin: 0 calc(-1 * var(--space-3));
-            padding-left: var(--space-3);
-            padding-right: var(--space-3);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--border-hover);
         }
         
-        .pub-number {
-            flex-shrink: 0;
-            min-width: 36px;
-            height: 24px;
+        .pub-entry-header {
             display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            color: var(--accent-cyan);
-            font-size: 13px;
-            font-weight: 600;
-        }
-        
-        .pub-body {
-            flex: 1;
-        }
-        
-        .pub-authors-compact {
-            color: var(--text-primary);
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--space-4);
         }
         
         .pub-title-compact {
-            font-weight: 600;
-            color: var(--accent-cyan);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.4;
+            margin: 0;
         }
         
         .pub-title-compact a {
             color: inherit;
             text-decoration: none;
+            transition: color 0.2s;
         }
         
         .pub-title-compact a:hover {
             color: var(--accent-cyan);
-            text-decoration: underline;
         }
         
-        .pub-venue-compact {
-            font-style: normal;
+        .pub-authors-compact {
             color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .pub-authors-compact i {
+            color: var(--text-muted);
+            margin-right: 6px;
         }
         
-        .pub-venue-compact em {
+        .pub-metadata {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: var(--space-3);
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        
+        .pub-metadata span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .pub-metadata em {
             font-style: italic;
-        }
-        
-        .pub-year-compact {
             color: var(--text-secondary);
         }
         
         .pub-type-tag {
-            display: inline-block;
-            padding: 1px 6px;
-            font-size: 10px;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
-            border-radius: 3px;
-            margin-left: 6px;
-            vertical-align: middle;
+            letter-spacing: 0.5px;
+            border-radius: var(--radius-full);
+            flex-shrink: 0;
         }
         
-        .tag-journal { background: rgba(14, 165, 233, 0.15); color: #0ea5e9; }
-        .tag-conference { background: rgba(139, 92, 246, 0.15); color: #8b5cf6; }
-        .tag-book { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+        .tag-journal { background: rgba(14, 165, 233, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.2); }
+        .tag-conference { background: rgba(167, 139, 250, 0.1); color: #a78bfa; border: 1px solid rgba(167, 139, 250, 0.2); }
+        .tag-book { background: rgba(52, 211, 153, 0.1); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.2); }
         
         .pub-links {
-            margin-top: 4px;
+            margin-top: calc(var(--space-2));
             display: flex;
             gap: var(--space-3);
-            font-size: 12px;
+            font-size: 13px;
+            border-top: 1px solid var(--border-subtle);
+            padding-top: var(--space-3);
         }
         
         .pub-link {
-            color: var(--accent-cyan);
-            text-decoration: none;
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
         }
         
         .pub-link:hover {
-            text-decoration: underline;
+            color: var(--accent-cyan);
+        }
+        .pub-link.cite-link:hover {
+            color: var(--accent-purple);
         }
         
         /* Export modal */
@@ -573,54 +593,75 @@ function generateIEEE($pub, $index) {
                                     <div class="pub-entry" 
                                          data-type="<?php echo $filter_type; ?>"
                                          data-id="<?php echo $pub['id']; ?>">
-                                        <div class="pub-number">[<?php echo $global_index; ?>]</div>
-                                        <div class="pub-body">
-                                            <?php 
-                                            // Clean author names - remove ellipsis and clean up formatting
-                                            $authors = $pub['authors'];
-                                            $authors = str_replace(['…', '...'], '', $authors);
-                                            $authors = preg_replace('/^,\s*/', '', $authors); // Remove leading comma
-                                            $authors = preg_replace('/,\s*,/', ',', $authors); // Remove double commas
-                                            $authors = trim($authors, ', ');
-                                            
-                                            // IEEE format: Authors, "Title," Venue, Year.
-                                            ?>
-                                            <span class="pub-authors-compact"><?php echo htmlspecialchars($authors); ?>,</span>
-                                            <?php if ($pub['url']): ?>
-                                                <a href="<?php echo htmlspecialchars($pub['url']); ?>" target="_blank" class="pub-title-compact">
-                                                    "<?php echo htmlspecialchars($pub['title']); ?>,"
-                                                </a>
-                                            <?php else: ?>
-                                                <span class="pub-title-compact">"<?php echo htmlspecialchars($pub['title']); ?>,"</span>
-                                            <?php endif; ?>
-                                            <?php if ($type_label): ?>
-                                                <span class="pub-type-tag <?php echo $type_class; ?>"><?php echo $type_label; ?></span>
-                                            <?php endif; ?>
-                                            <?php if ($pub['venue']): ?>
-                                                <span class="pub-venue-compact"><em><?php echo htmlspecialchars($pub['venue']); ?></em>,</span>
-                                            <?php endif; ?>
-                                            <?php if ($pub['year']): ?>
-                                                <span class="pub-year-compact"><?php echo $pub['year']; ?>.</span>
-                                            <?php endif; ?>
-                                            
-                                            <?php if ($pub['doi'] || $pub['url']): ?>
-                                            <div class="pub-links">
+                                         
+                                        <?php 
+                                        // Clean author names
+                                        $authors = $pub['authors'];
+                                        $authors = str_replace(['…', '...'], '', $authors);
+                                        $authors = preg_replace('/^,\s*/', '', $authors); // Remove leading comma
+                                        $authors = preg_replace('/,\s*,/', ',', $authors); // Remove double commas
+                                        $authors = trim($authors, ', ');
+                                        ?>
+                                        
+                                        <div class="pub-entry-header">
+                                            <h4 class="pub-title-compact">
                                                 <?php if ($pub['url']): ?>
-                                                    <a href="<?php echo htmlspecialchars($pub['url']); ?>" target="_blank" class="pub-link">
-                                                        <i class="fas fa-external-link-alt"></i> Paper
+                                                    <a href="<?php echo htmlspecialchars($pub['url']); ?>" target="_blank">
+                                                        <?php echo htmlspecialchars($pub['title']); ?>
                                                     </a>
+                                                <?php else: ?>
+                                                    <span><?php echo htmlspecialchars($pub['title']); ?></span>
                                                 <?php endif; ?>
-                                                <?php if ($pub['doi']): ?>
-                                                    <a href="https://doi.org/<?php echo htmlspecialchars($pub['doi']); ?>" target="_blank" class="pub-link">
-                                                        <i class="fas fa-link"></i> DOI
-                                                    </a>
-                                                <?php endif; ?>
-                                                <a href="#" class="pub-link" onclick="copySingleBibtex(<?php echo $pub['id']; ?>); return false;">
-                                                    <i class="fas fa-quote-right"></i> Cite
-                                                </a>
-                                            </div>
+                                            </h4>
+                                            <?php if ($type_label): ?>
+                                                <span class="pub-type-tag <?php echo $type_class; ?>">
+                                                    <?php echo htmlspecialchars(ucfirst($filter_type)); ?>
+                                                </span>
                                             <?php endif; ?>
                                         </div>
+                                        
+                                        <div class="pub-authors-compact">
+                                            <i class="fas fa-users"></i>
+                                            <?php echo htmlspecialchars($authors); ?>
+                                        </div>
+                                        
+                                        <div class="pub-metadata">
+                                            <?php if ($pub['venue']): ?>
+                                                <span>
+                                                    <i class="fas fa-book-open"></i>
+                                                    <em><?php echo htmlspecialchars($pub['venue']); ?></em>
+                                                </span>
+                                            <?php endif; ?>
+                                            
+                                            <?php if ($pub['venue'] && $pub['year']): ?>
+                                                <span style="color: var(--border-color);">|</span>
+                                            <?php endif; ?>
+                                            
+                                            <?php if ($pub['year']): ?>
+                                                <span>
+                                                    <i class="far fa-calendar-alt"></i>
+                                                    <?php echo $pub['year']; ?>
+                                                </span>
+                                            <?php endif; ?>
+                                        </div>
+                                        
+                                        <?php if ($pub['doi'] || $pub['url']): ?>
+                                        <div class="pub-links">
+                                            <?php if ($pub['url']): ?>
+                                                <a href="<?php echo htmlspecialchars($pub['url']); ?>" target="_blank" class="pub-link">
+                                                    <i class="fas fa-external-link-alt"></i> Access Paper
+                                                </a>
+                                            <?php endif; ?>
+                                            <?php if ($pub['doi']): ?>
+                                                <a href="https://doi.org/<?php echo htmlspecialchars($pub['doi']); ?>" target="_blank" class="pub-link">
+                                                    <i class="fas fa-link"></i> DOI
+                                                </a>
+                                            <?php endif; ?>
+                                            <a href="#" class="pub-link cite-link" onclick="copySingleBibtex(<?php echo $pub['id']; ?>); return false;">
+                                                <i class="fas fa-quote-right"></i> Cite
+                                            </a>
+                                        </div>
+                                        <?php endif; ?>
                                     </div>
                                 <?php 
                                 $global_index++;
