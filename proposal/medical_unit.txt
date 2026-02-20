@@ -1,0 +1,77 @@
+Cognitive Robotics and Autonomous Systems Center (CRAS Center)
+MedRoboAI Unit: Translational Research in Medical Robotics & AI in Healthcare
+From Lab Bench to Clinical Use
+CRAS Center Director	Prof. Anis Koubaa
+CRAS Center Deputy Director	Prof. Driss Benhaddou
+Unit Lead	Dr. Mohamed Bahloul
+Initial launch horizon	12 months (with scalable multi‑year roadmap)
+
+	
+1.	Executive summary
+This proposal establishes a dedicated unit within the Cognitive Robotics and Autonomous Systems Center to accelerate clinically relevant innovation in medical robotics, robotic surgery copilots, medical simulators, and AI in healthcare. 
+The unit is designed as a translation engine that connects CRAS robotics/autonomy capabilities with clinical needs, academic talent pipelines, and engineering validation capacity to produce demonstrable prototypes and translation-ready packages.
+2.	Vision and mission
+Vision: 
+Build a nationally visible, clinically grounded hub delivering safe, validated, and transferable medical robotics and AI solutions.
+Mission (Year 1)
+•	Deliver two pilot prototypes (simulation/bench validated) and at least one translation-ready package (evaluation + documentation + adoption plan).
+•	Establish a repeatable translation pipeline (needs finding → prototype → verification/validation → translation).
+•	Strengthen CRAS Center collaboration through shared infrastructure, joint proposals, co-supervision, and ecosystem engagement.
+3.	Scope and thematic pillars
+•	Medical Robotics (assistive/rehabilitation, image-guided robotics, safe human–robot interaction)
+•	Surgical Robotics Copilots (workflow intelligence, perception, skill assessment, safety monitoring)
+•	Medical Simulation & Training (VR/AR/haptics simulation, competency metrics, procedure rehearsal)
+•	AI in Healthcare (biomedical imaging/radiology, clinical AI, physiologic AI, decision support)
+•	Translation & Ecosystem Engagement (evaluation, documentation, partnerships, technology transfer)
+4.	Synergy model and collaboration
+MedRoboAI is designed to integrate tightly with CRAS Center programs and infrastructure, while leveraging complementary strengths across the Colleges and the healthcare ecosystem:
+•	CRAS Center of Excellence: Robotics/autonomy platforms, shared testbeds, center governance, and cross-lab engineering integration.
+•	Alfa‑HI: Clinical needs finding, healthcare ecosystem partnerships, innovation pipeline, and translational program alignment.
+•	Translational Biomedical Engineering Research Lab: Rapid prototyping, verification/validation, publications, and IP support.
+•	Biomedical Engineering Department: BME curriculum alignment, capstones, clinical engineering pipeline, and co-supervision.
+•	Electrical Engineering Department: Controls, embedded systems, sensing, signals/AI, and systems engineering co-supervision.
+•	Software Engineering Department: Software architecture, MLOps, safety-by-design software practices, and productization support.
+•	Advanced Computing Division: High-performance compute, data infrastructure, scalable AI training/inference, and advanced computing expertise.
+ 
+5.	Operating model (recommended personnel hierarchy)
+A simple, delivery-focused hierarchy is recommended to ensure both governance and execution speed:
+•	CRAS Center Director and Deputy Director (oversight and alignment)
+•	MedRoboAI Unit Lead (strategy, delivery accountability, stakeholder alignment)
+•	Unit Executive Committee (pillar leads + operations lead; monthly delivery review)
+•	Pillar Leads (technical roadmaps and deliverables)
+•	Core Team (program/ops, robotics/software engineering, data/ML, clinical coordination)
+•	Researchers and trainees (postdocs, MSc/PhD, capstones, interns)
+•	Clinical and industry advisory groups (periodic review for relevance, safety, and transfer readiness)
+5. Year‑1 plan (high-level)
+The unit will deliver two pilots and a translation playbook within 12 months:
+1.	Pilot 1: Surgical Robotics Copilot (simulation-first MVP). Workflow recognition + safety prompts + measurable performance metrics in a simulator environment.
+2.	Pilot 2: Medical Simulator Module. One procedure-focused simulator with objective skill scoring and feedback.
+3.	Translational Playbook. Templates for data readiness, evaluation, documentation, and project gating (prototype → V&V → translation).
+12‑month roadmap (quarterly milestones)
+•	Q1: Clinical needs-finding; select 2 use-cases; define success metrics; establish governance templates.
+•	Q2: Prototype v1 for both pilots; bench/simulation verification; first joint proposal submission.
+•	Q3: Prototype v2; usability/workflow studies; demo day; clinician-facing workshop delivery (part 1).
+•	Q4: Translation package for at least one pilot; publications/IP; workshops (part 2); SmartTech 2026 track execution; Year‑2 roadmap.
+6.	Clinician-facing workshops (healthcare ecosystem engagement)
+An approved four-workshop program will run during mid‑January to February 2026, co-led by Dr. Mohamed Bahloul and Prof. Anis Koubaa, targeting clinicians and the wider healthcare ecosystem.
+•	الذكاء الاصطناعي في التصوير الطبي (AI in Medical Imaging)
+•	الذكاء الاصطناعي لتحسين نتائج المرضى (AI for Improving Patient Outcomes)
+•	تخصص الذكاء الاصطناعي في الرعاية الصحية (AI in Healthcare Specialization Track)
+•	تعلّم الآلة بلغة بايثون لمتخصصي الرعاية الصحية (Machine Learning with Python for Healthcare Professionals)
+Each workshop will combine fundamentals and advanced applications with hands-on components (coding, case studies, and implementation templates) to seed pilot projects and strengthen the ecosystem pipeline.
+7. SmartTech 2026 dedicated track
+MedRoboAI will curate and lead a dedicated SmartTech 2026 track on Medical Robotics and AI in Healthcare, including keynotes/panels, technical sessions, tutorials (coding for the medical sector), and demo/poster showcases.
+8. KPIs (12‑month targets)
+•	Two pilots launched; at least one demo-ready validated prototype
+•	Two or more joint funding submissions (center + external/industry)
+•	Two or more publications; at least one IP disclosure/patent filing
+•	Four workshops delivered (Jan–Feb 2026) and active engagement of clinicians and ecosystem partners
+•	At least two active clinical/industry collaborations with documented milestones
+ 
+Figure 2. Simplified synergy map (CRAS + Alfa‑HI + departments + lab).
+References (links)
+•	WHO Global Strategy on Digital Health 2020–2025: https://www.who.int/publications/i/item/9789240020924
+•	NIST AI Risk Management Framework (AI RMF 1.0):
+ https://www.nist.gov/itl/ai-risk-management-framework
+•	Saudi Vision 2030 – Health Sector Transformation Program: https://www.vision2030.gov.sa/en/explore/programs/health-sector-transformation-program
+•	SFDA (Saudi Food & Drug Authority) – Medical Devices portal: https://www.sfda.gov.sa/en/medicaldevices

@@ -1,0 +1,232 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+
+% Colors
+\definecolor{primary}{RGB}{14, 165, 233}
+\definecolor{secondary}{RGB}{139, 92, 246}
+\definecolor{darkbg}{RGB}{15, 23, 42}
+\definecolor{lighttext}{RGB}{148, 163, 184}
+\definecolor{accent}{RGB}{56, 189, 248}
+\definecolor{darkblue}{RGB}{30, 58, 95}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary
+}
+
+% Section formatting
+\titleformat{\section}
+    {\Large\bfseries\color{primary}}
+    {}
+    {0em}
+    {}[\titlerule]
+
+\titleformat{\subsection}
+    {\large\bfseries\color{darkbg}}
+    {}
+    {0em}
+    {}
+
+% Header/Footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small\color{lighttext} AlfaisalX -- Alfaisal University, Riyadh, Saudi Arabia \quad | \quad Page \thepage}
+
+% Custom boxes
+\newtcolorbox{highlightbox}{
+    colback=primary!5,
+    colframe=primary,
+    boxrule=0.5pt,
+    arc=4pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt
+}
+
+\newtcolorbox{aboutbox}{
+    colback=darkblue!8,
+    colframe=darkblue,
+    boxrule=0.5pt,
+    arc=4pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt
+}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\Huge\bfseries\color{darkbg} AlfaisalX}\\[4pt]
+    {\large\color{lighttext} Alfaisal Center for Robotics and Autonomous Agents}\\[20pt]
+    
+    \begin{tikzpicture}
+        \fill[primary] (0,0) rectangle (16,0.1);
+    \end{tikzpicture}
+    
+    \vspace{20pt}
+    
+    {\LARGE\bfseries\color{darkbg} Research Engineer in Robotics}\\[10pt]
+    {\large\color{primary} \faIcon{building} Robotics Lab \quad | \quad \faIcon{map-marker-alt} Riyadh, Saudi Arabia}\\[8pt]
+    {\color{secondary}\faIcon{briefcase} Full-Time Research Position}
+\end{center}
+
+\vspace{15pt}
+
+% About AlfaisalX
+\section{About AlfaisalX}
+
+\begin{aboutbox}
+\textbf{AlfaisalX} (Alfaisal Center for Robotics and Autonomous Agents) is a newly established \textbf{Center of Excellence} at Alfaisal University, dedicated to advancing the frontiers of cognitive robotics, autonomous systems, and artificial intelligence. Our mission is to drive innovation, develop cutting-edge technologies, and cultivate the next generation of AI and robotics leaders in alignment with \textbf{Saudi Vision 2030}.
+
+\vspace{8pt}
+
+\textbf{Alfaisal University}, located in Riyadh, is one of the leading private research universities in the Middle East. The \textbf{College of Engineering} houses state-of-the-art laboratories and research facilities, offering an exceptional environment for groundbreaking research. Our faculty includes internationally recognized experts who have published extensively in top-tier venues.
+
+\vspace{8pt}
+
+\textbf{Our Research Focus Areas:}
+\begin{itemize}[leftmargin=15pt, itemsep=2pt, topsep=4pt]
+    \item Agentic AI \& Large Language Models for Business Automation
+    \item Robotics, UAVs \& Autonomous Ground/Aerial Systems
+    \item Medical \& Health Robotics (Surgery, Rehabilitation, Medical Imaging)
+    \item Cloud Robotics \& Multi-Robot Systems
+\end{itemize}
+\end{aboutbox}
+
+\vspace{15pt}
+
+% About the Position
+\section{About the Position}
+
+We are seeking a highly skilled and motivated \textbf{Research Engineer} to join our dynamic robotics team at AlfaisalX. This is an exceptional opportunity for a passionate roboticist to work on cutting-edge projects that will shape the future of autonomous systems in Saudi Arabia and beyond.
+
+The ideal candidate will have proven hands-on experience with ROS/ROS 2, Gazebo simulation, and integration of robotic systems including UAVs, ground robots, and mobile platforms. You will work alongside world-class researchers, collaborate with industry partners such as \textbf{HUMAIN}, \textbf{Bako Motors}, and \textbf{Tawuniya}, and contribute to projects that have real-world impact.
+
+As a Research Engineer, you will be at the forefront of developing next-generation robotic solutions, from autonomous navigation systems to intelligent drone fleets. You will have access to state-of-the-art equipment including high-end UAV platforms, mobile robots, motion capture systems, and powerful GPU workstations for deep learning.
+
+This role offers significant growth opportunities, including the possibility of pursuing a Ph.D. for exceptional candidates and co-authoring publications in top robotics venues such as ICRA, IROS, and RA-L.
+
+\vspace{15pt}
+
+% Key Responsibilities
+\section{Key Responsibilities}
+
+\begin{itemize}[leftmargin=20pt, itemsep=6pt]
+    \item[\faIcon{robot}] Design, develop, and integrate robotic systems using ROS/ROS 2
+    \item[\faIcon{map}] Implement SLAM algorithms for autonomous navigation
+    \item[\faIcon{robot}] Develop and test UAV and ground robot control systems
+    \item[\faIcon{microchip}] Integrate sensors, actuators, and computing platforms
+    \item[\faIcon{users}] Collaborate with research teams on cutting-edge robotics projects
+    \item[\faIcon{file-alt}] Document technical specifications and research findings
+    \item[\faIcon{flask}] Support real-world deployment and field testing
+\end{itemize}
+
+\vspace{15pt}
+
+% Requirements
+\section{Required Qualifications}
+
+\begin{itemize}[leftmargin=20pt, itemsep=6pt]
+    \item Bachelor's or Master's degree in Electrical Engineering, Robotics, Mechatronics, Computer Engineering, or Computer Science
+    \item \textbf{3+ years} hands-on experience with ROS/ROS 2
+    \item Proficiency in \textbf{C++ and Python} for robotics applications
+    \item Experience with Gazebo or similar robotics simulators
+    \item Strong background in \textbf{SLAM, path planning, and localization}
+    \item Experience with UAVs, mobile robots, or manipulators
+    \item Excellent problem-solving and debugging skills
+\end{itemize}
+
+\vspace{15pt}
+
+% Preferred
+\section{Preferred Qualifications}
+
+\begin{itemize}[leftmargin=20pt, itemsep=6pt]
+    \item Experience with real-time systems and embedded platforms
+    \item Knowledge of computer vision and sensor fusion
+    \item Publications in top robotics venues (ICRA, IROS, RA-L)
+    \item Experience with PX4, ArduPilot, or similar autopilots
+    \item Familiarity with Docker, CI/CD for robotics
+\end{itemize}
+
+\vspace{15pt}
+
+% Benefits
+\section{What We Offer}
+
+\begin{highlightbox}
+\begin{itemize}[leftmargin=15pt, itemsep=5pt]
+    \item[\faIcon{money-bill-wave}] Competitive salary commensurate with experience
+    \item[\faIcon{building}] State-of-the-art research facilities and equipment
+    \item[\faIcon{globe}] Collaborative international research environment
+    \item[\faIcon{rocket}] Opportunity to work on cutting-edge robotics projects
+    \item[\faIcon{graduation-cap}] Professional development and training opportunities
+    \item[\faIcon{handshake}] Industry collaboration with leading tech companies
+    \item[\faIcon{plane}] Conference travel support for publications
+\end{itemize}
+\end{highlightbox}
+
+\vspace{20pt}
+
+% How to Apply
+\section{How to Apply}
+
+Interested candidates should submit the following documents to \textbf{\href{mailto:alfaisalx@alfaisal.edu}{alfaisalx@alfaisal.edu}}:
+
+\begin{enumerate}[leftmargin=20pt, itemsep=4pt]
+    \item Updated CV/Resume highlighting relevant experience
+    \item Cover letter explaining your interest and qualifications
+    \item Links to relevant projects, GitHub repositories, or publications
+    \item Contact information for 2-3 professional references
+\end{enumerate}
+
+\vspace{15pt}
+
+\begin{center}
+    \begin{tcolorbox}[
+        colback=secondary!10,
+        colframe=secondary,
+        width=0.8\textwidth,
+        arc=6pt,
+        boxrule=1pt
+    ]
+        \centering
+        {\large\bfseries\color{secondary} Apply Now}\\[8pt]
+        {\faIcon{envelope} \href{mailto:alfaisalx@alfaisal.edu}{alfaisalx@alfaisal.edu}}\\[5pt]
+        {\small Subject: Application -- Research Engineer in Robotics}
+    \end{tcolorbox}
+\end{center}
+
+\vspace{15pt}
+
+% Footer info
+\begin{center}
+    \color{lighttext}
+    \rule{0.6\textwidth}{0.5pt}\\[10pt]
+    {\small AlfaisalX is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.}\\[10pt]
+    \faIcon{globe} \href{https://alfaisalx.alfaisal.edu}{alfaisalx.alfaisal.edu} \quad | \quad
+    \faIcon{map-marker-alt} Alfaisal University, Riyadh, KSA
+\end{center}
+
+\end{document}

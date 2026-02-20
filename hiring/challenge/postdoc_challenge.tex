@@ -1,0 +1,278 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{fontawesome5}
+
+\definecolor{primarycolor}{RGB}{0,102,204}
+\definecolor{accentcolor}{RGB}{220,50,50}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primarycolor,
+    urlcolor=primarycolor,
+    citecolor=primarycolor
+}
+
+\title{\textbf{\Large 5-Day Postdoctoral Technical Challenge}\\[0.3em]
+\large AI Medical Imaging + Agentic LLM Pipeline}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{tcolorbox}[colback=primarycolor!5,colframe=primarycolor,title=\textbf{Challenge Overview}]
+This challenge evaluates your ability to design and implement an end-to-end AI system combining medical imaging, machine learning, and agentic LLM capabilities. You will build a complete pipeline from data processing to automated analysis and reporting.
+
+\vspace{0.5em}
+\textbf{Submission:} GitHub repository with complete implementation\\
+\textbf{Duration:} 5 days\\
+\textbf{Dataset:} MedMNIST v2 -- PneumoniaMNIST (provided)
+\end{tcolorbox}
+
+\section{Dataset Specification}
+
+You must use the \textbf{PneumoniaMNIST} dataset from MedMNIST v2:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Task:} Binary classification of chest X-ray images for pneumonia detection
+    \item \textbf{Size:} Approximately 6,000 training images
+    \item \textbf{Format:} 2D grayscale images (28×28 pixels)
+    \item \textbf{Access:} Publicly available via Python package
+\end{itemize}
+
+\textbf{Installation:}
+\begin{verbatim}
+pip install medmnist
+\end{verbatim}
+
+\textbf{Documentation:} \url{https://medmnist.com/}
+
+\section{Challenge Objectives}
+
+Build a complete system that accomplishes the following:
+
+\begin{enumerate}[leftmargin=*]
+    \item Train a deep learning model for pneumonia classification
+    \item Evaluate model performance using rigorous metrics
+    \item Implement an LLM-based agent to analyze experimental results
+    \item Generate an automated experiment report with insights and recommendations
+\end{enumerate}
+
+\section{Required Components}
+
+\subsection{1. Data Pipeline}
+
+Implement a complete data processing pipeline including:
+
+\begin{itemize}[leftmargin=*]
+    \item Data loading and exploration
+    \item Normalization and preprocessing
+    \item Data augmentation strategies
+    \item Train/validation/test split management
+    \item Batch processing for training and inference
+\end{itemize}
+
+\subsection{2. Vision Model}
+
+Train a deep learning model for pneumonia classification. You may choose any architecture (CNN, ResNet, Vision Transformer, or custom design).
+
+\textbf{Required outputs:}
+\begin{itemize}[leftmargin=*]
+    \item Classification accuracy
+    \item Area Under the ROC Curve (AUC)
+    \item Confusion matrix
+    \item Analysis of failure cases with examples
+\end{itemize}
+
+\subsection{3. Agentic LLM Component}
+
+Design and implement an LLM-based agent that can analyze experimental results and provide insights.
+
+\textbf{Agent inputs:}
+\begin{itemize}[leftmargin=*]
+    \item Training metrics and loss curves
+    \item Evaluation results and performance statistics
+    \item Error analysis data
+\end{itemize}
+
+\textbf{Agent outputs:}
+\begin{itemize}[leftmargin=*]
+    \item Performance explanation and interpretation
+    \item Identification of model weaknesses
+    \item Concrete suggestions for improvements
+    \item Comprehensive experiment summary
+\end{itemize}
+
+\textbf{Implementation notes:}
+\begin{itemize}[leftmargin=*]
+    \item The agent may use tools such as metrics readers, dataset inspectors, or result summarizers
+    \item You may use any framework (LangChain, DSPy, custom implementation)
+    \item Agent should demonstrate reasoning capabilities beyond simple template filling
+\end{itemize}
+
+\subsection{4. Automated Experiment Report}
+
+Your system must automatically generate a comprehensive report including:
+
+\begin{itemize}[leftmargin=*]
+    \item Summary of all metrics
+    \item Visualization of sample predictions
+    \item Error analysis with representative examples
+    \item Agent-generated insights and recommendations
+    \item Suggested next steps for model improvement
+\end{itemize}
+
+\textbf{Output format:} Markdown or PDF
+
+\subsection{5. Reproducibility Requirements}
+
+Your repository must enable complete reproducibility:
+
+\begin{itemize}[leftmargin=*]
+    \item Clear README with setup instructions
+    \item Complete requirements file with all dependencies
+    \item Simple commands to run training and evaluation
+    \item Configuration files for hyperparameters
+    \item Seed management for deterministic results
+\end{itemize}
+
+\section{Expected Repository Structure}
+
+Organize your code with clear separation of concerns:
+
+\begin{verbatim}
+repository/
+|-- data/              # Data loading and preprocessing
+|-- models/            # Model architectures
+|-- training/          # Training scripts and utilities
+|-- evaluation/        # Evaluation and metrics
+|-- agent/             # LLM agent implementation
+|-- reports/           # Generated reports and outputs
+|-- configs/           # Configuration files
+|-- requirements.txt   # Python dependencies
+`-- README.md          # Documentation
+\end{verbatim}
+
+\section{Evaluation Criteria}
+
+Your submission will be evaluated according to the following rubric:
+
+\begin{center}
+\begin{tabular}{|l|c|p{7cm}|}
+\hline
+\textbf{Area} & \textbf{Weight} & \textbf{Key Aspects} \\
+\hline
+Pipeline \& Model Quality & 40\% & Code organization, model design, training methodology, performance \\
+\hline
+Evaluation Rigor & 25\% & Comprehensive metrics, error analysis, statistical validity \\
+\hline
+Agent Usefulness & 20\% & Quality of insights, reasoning depth, actionable recommendations \\
+\hline
+Code \& Reproducibility & 15\% & Documentation, code quality, ease of reproduction \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Bonus Components (Optional)}
+
+Exceptional candidates may include additional features for extra credit:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Novel augmentation strategies} tailored to medical imaging
+    \item \textbf{Model improvements} through architecture search or ensemble methods
+    \item \textbf{Uncertainty estimation} with confidence calibration
+    \item \textbf{Training optimization} using advanced techniques
+    \item \textbf{Ablation studies} demonstrating component contributions
+    \item \textbf{Medical visual embeddings + image retrieval:}
+    \begin{itemize}
+        \item Use a pre-trained medical vision model (e.g., BioViL-T, MedCLIP, PMC-CLIP)
+        \item Build a content-based image retrieval (CBIR) system using FAISS
+        \item Implement image-to-image and text-to-image search
+        \item Evaluate retrieval quality with Precision@k metrics
+        \item Integrate retrieval capabilities with the LLM agent
+    \end{itemize}
+\end{itemize}
+
+\section{Submission Guidelines}
+
+\subsection{What to Submit}
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{GitHub repository URL} with complete implementation
+    \item \textbf{README.md} with:
+    \begin{itemize}
+        \item Setup instructions
+        \item Commands to reproduce all results
+        \item Brief description of your approach
+        \item Summary of key findings
+    \end{itemize}
+    \item \textbf{Generated report} (in reports/ directory)
+    \item \textbf{Trained model weights} (or instructions to reproduce)
+\end{enumerate}
+
+\subsection{Minimum Viable Submission}
+
+At minimum, your repository must:
+\begin{itemize}[leftmargin=*]
+    \item Load and preprocess the PneumoniaMNIST dataset
+    \item Train a model that achieves reasonable performance (>70\% accuracy)
+    \item Generate all required metrics and visualizations
+    \item Include a functional LLM agent that produces meaningful analysis
+    \item Produce an automated report
+    \item Be reproducible with clear documentation
+\end{itemize}
+
+\section{Technical Requirements}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Programming language:} Python 3.8+
+    \item \textbf{Deep learning framework:} PyTorch or TensorFlow
+    \item \textbf{LLM access:} You may use any LLM API (OpenAI, Anthropic, open-source models)
+    \item \textbf{Version control:} Git with meaningful commit history
+    \item \textbf{Documentation:} Clear comments and docstrings
+\end{itemize}
+
+\section{Suggested Timeline}
+
+While you may organize your time as you see fit, a typical approach might be:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Days 1--2:} Data pipeline and baseline model implementation
+    \item \textbf{Day 3:} Comprehensive evaluation and model improvements
+    \item \textbf{Day 4:} Agent integration and testing
+    \item \textbf{Day 5:} Report generation, documentation, and final cleanup
+\end{itemize}
+
+\section{Evaluation Process}
+
+Your submission will be reviewed for:
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Technical competence:} Can you build robust ML pipelines?
+    \item \textbf{Research thinking:} Do you evaluate thoroughly and think critically?
+    \item \textbf{Modern AI integration:} Can you effectively use LLM-based tools?
+    \item \textbf{Code quality:} Is your code clean, documented, and maintainable?
+    \item \textbf{Problem-solving:} How do you approach challenges and debugging?
+\end{enumerate}
+
+\section{Important Notes}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Originality:} Your code must be your own work. You may use libraries and reference documentation, but the implementation should demonstrate your understanding.
+    \item \textbf{API keys:} If using commercial LLM APIs, ensure you follow best practices for API key management (environment variables, not hardcoded).
+    \item \textbf{Computational resources:} The challenge is designed to be completable on a standard laptop. GPU access is helpful but not required.
+    \item \textbf{Questions:} If you have clarifying questions about requirements, please reach out.
+\end{itemize}
+
+\vspace{1em}
+\begin{tcolorbox}[colback=accentcolor!5,colframe=accentcolor]
+\textbf{Good luck!} We look forward to reviewing your submission and learning about your approach to this challenge.
+\end{tcolorbox}
+
+\end{document}

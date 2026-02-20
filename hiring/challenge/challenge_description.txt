@@ -1,0 +1,460 @@
+## ✅ 5-Day Postdoc Technical Challenge
+
+### **AI Medical Imaging + Agentic LLM Pipeline**
+
+Applicants must submit a **GitHub repository** implementing an end-to-end pipeline.
+
+---
+
+## 📦 Dataset (Fixed)
+
+Use **MedMNIST v2 – PneumoniaMNIST**
+
+* Task: **Chest X-ray pneumonia classification**
+* Size: ~6k training images (lightweight, feasible in 5 days)
+* Format: 2D images (easy setup, fast training)
+* Public & easy to load via Python package
+
+Install:
+
+```bash
+pip install medmnist
+```
+
+Dataset loader:
+
+```python
+from medmnist import PneumoniaMNIST
+```
+
+---
+
+## 🎯 Challenge Objective
+
+Build a system that:
+
+1. Trains a medical imaging model
+2. Evaluates performance rigorously
+3. Uses an LLM-based agent to analyze results
+4. Automatically produces an experiment report
+
+---
+
+## ✅ Required Components
+
+### 1) Imaging Pipeline
+
+Must include:
+
+* Data loading
+* Normalization & preprocessing
+* Augmentation
+* Train/validation/test split
+* Training + inference pipeline
+
+---
+
+### 2) Vision Model
+
+Train a model for **pneumonia classification**.
+
+Examples:
+
+* CNN / ResNet / ViT / custom model
+
+Must report:
+
+* Accuracy
+* AUC
+* Confusion matrix
+* Failure examples
+
+---
+
+### 3) Agentic + LLM Component
+
+Create an agent that can:
+
+Input:
+
+* Training metrics
+* Evaluation results
+
+Output:
+
+* Performance explanation
+* Model weaknesses
+* Suggested improvements
+* Experiment summary
+
+Agent may use tools such as:
+
+* Metrics reader
+* Dataset inspector
+* Result summarizer
+
+Framework optional (LangChain, DSPy, custom).
+
+---
+
+### 4) Automatic Experiment Report
+
+Repository must generate:
+
+* Metrics summary
+* Sample predictions
+* Error analysis
+* Suggested next steps
+
+Output format: Markdown or PDF.
+
+---
+
+### 5) Reproducibility
+
+Repo must contain:
+
+* README with setup steps
+* Training command
+* Evaluation command
+* Requirements file
+
+---
+
+## 📁 Expected Repo Structure
+
+```
+repo/
+├── data/
+├── models/
+├── training/
+├── evaluation/
+├── agent/
+├── reports/
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🏆 Evaluation Criteria
+
+| Area                     | Weight |
+| ------------------------ | ------ |
+| Pipeline & model quality | 40%    |
+| Evaluation rigor         | 25%    |
+| Agent usefulness         | 20%    |
+| Code & reproducibility   | 15%    |
+
+---
+
+## ⭐ Bonus (Optional)
+
+Extra credit for:
+
+* Novel augmentation
+* Model improvement
+* Uncertainty estimation
+* Training optimization
+* Ablation experiments
+
+---
+
+## ⏱ Expected Effort
+
+A strong candidate should finish:
+
+Day 1–2: pipeline + baseline model
+Day 3: evaluation + improvements
+Day 4: agent integration
+Day 5: cleanup + report
+
+---
+
+If you want, next step we can produce a **one-page official challenge PDF** ready to send to applicants.
+Below is a **concise solution outline** showing how a strong applicant would solve the challenge in 5 days.
+
+---
+
+## ✅ Solution Strategy
+
+### Step 1 — Load Dataset
+
+Install and load MedMNIST:
+
+```bash
+pip install medmnist
+```
+
+```python
+from medmnist import PneumoniaMNIST
+from torchvision import transforms
+
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.5], std=[0.5])
+])
+
+train_dataset = PneumoniaMNIST(split="train", transform=transform, download=True)
+test_dataset = PneumoniaMNIST(split="test", transform=transform, download=True)
+```
+
+Add augmentations for training:
+
+```python
+transforms.RandomHorizontalFlip()
+transforms.RandomRotation(10)
+```
+
+---
+
+### Step 2 — Build Vision Model
+
+Example CNN baseline:
+
+```python
+import torch.nn as nn
+
+class CNN(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Conv2d(1, 32, 3, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(2),
+            nn.Conv2d(32, 64, 3, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(2),
+            nn.Flatten(),
+            nn.Linear(64*7*7, 128),
+            nn.ReLU(),
+            nn.Linear(128, 2)
+        )
+
+    def forward(self, x):
+        return self.net(x)
+```
+
+Train with:
+
+* Cross entropy loss
+* Adam optimizer
+* Early stopping
+
+---
+
+### Step 3 — Evaluation
+
+Compute:
+
+* Accuracy
+* AUC
+* Confusion matrix
+
+Save failure examples:
+
+```python
+if prediction != label:
+    save_image(...)
+```
+
+---
+
+### Step 4 — Agent + LLM
+
+Agent reads metrics and produces analysis.
+
+Example pipeline:
+
+```python
+metrics = load_metrics("results.json")
+
+prompt = f"""
+Model accuracy: {metrics['accuracy']}
+Confusion matrix: {metrics['cm']}
+Explain weaknesses and suggest improvements.
+"""
+
+response = llm(prompt)
+```
+
+Agent tools may include:
+
+* Metrics reader
+* Dataset statistics
+* Error analyzer
+
+---
+
+### Step 5 — Auto Report Generation
+
+Generate Markdown report:
+
+```python
+with open("report.md","w") as f:
+    f.write(summary_text)
+```
+
+Include:
+
+* Metrics
+* Plots
+* Error samples
+* Agent recommendations
+
+---
+
+### Step 6 — Repository Quality
+
+Provide:
+
+```bash
+pip install -r requirements.txt
+python train.py
+python evaluate.py
+```
+
+Include:
+
+* README
+* Config files
+* Reproducible training
+
+---
+
+## ✅ What Strong Candidates Will Add
+
+Good applicants typically include:
+
+• Better architecture (ResNet/ViT)
+• Hyperparameter tuning
+• Class imbalance handling
+• Explainability (Grad-CAM)
+• Ablation study
+
+---
+
+## 🎯 What You Learn From Their Submission
+
+You quickly see:
+
+* Can they engineer pipelines?
+* Can they debug training?
+* Do they evaluate properly?
+* Do they think like researchers?
+* Can they integrate modern AI tools?
+
+---
+
+If you want, next I can show:
+
+✅ Baseline repo template
+✅ Auto-grading script
+✅ Expected performance numbers
+✅ Interview questions based on submission
+✅ Cheating detection signals
+
+which makes the hiring pipeline extremely robust.
+Great — add a **Visual Embedding + Image Search (CBIR)** component using a **medical vision-language model**.
+
+Here is a **concrete, 5-day-feasible** add-on that fits perfectly with your challenge.
+
+---
+
+## 🔷 New Component (Required): Medical Visual Embeddings + Image Search
+
+### ✅ Fixed model (choose ONE)
+
+Pick one of these (all are “existing medical visual image models” and are common for embeddings/retrieval):
+
+**Option A (Chest X-ray best fit): BioViL-T (Microsoft) on HuggingFace** ([Hugging Face][1])
+**Option B (General medical): MedCLIP (EMNLP’22) — pip install / GitHub** ([GitHub][2])
+**Option C (Biomedical retrieval-focused): PMC-CLIP (MICCAI’23)** ([arXiv][3])
+
+If you keep the dataset as **PneumoniaMNIST (CXR)**, **BioViL-T is the cleanest fit**. ([Hugging Face][1])
+
+---
+
+## 🎯 Objective (What they must build)
+
+Create an **embedding index** for all test images, then implement:
+
+1. **Image → similar images (top-k)**
+2. **Text → image search (top-k)** (if model supports text encoder, like BioViL-T/MedCLIP/PMC-CLIP)
+
+---
+
+## ✅ Deliverables (Very concrete)
+
+Repo must include:
+
+### 1) Embedding extraction
+
+* Compute embeddings for all images using the selected model
+* Save:
+
+  * `embeddings.npy`
+  * `image_ids.json`
+
+### 2) Vector index + retrieval
+
+* Use **FAISS** (preferred) or sklearn NearestNeighbors
+* Implement:
+
+  * `python search_by_image.py --query path/to/img.png --topk 5`
+  * `python search_by_text.py --query "pneumonia opacity" --topk 5` *(if supported)*
+
+### 3) Retrieval output
+
+Must output:
+
+* Top-k IDs
+* Similarity scores
+* A grid image saved to `reports/retrieval_examples.png`
+
+### 4) Simple retrieval evaluation
+
+They must report at least:
+
+* **Precision@k** using labels (same-label retrieval)
+* Example: “for each query image, how many of top-5 share same label?”
+
+---
+
+## 🧠 Why this is a good filter
+
+This tests whether they can:
+
+* Use a **foundation medical embedding model**
+* Build a **real CBIR system**
+* Connect vision outputs to an **agent/report**
+
+(And it’s doable within 5 days.)
+
+---
+
+## 🔌 How it connects to the LLM Agent (required)
+
+Agent must be able to answer:
+
+* “Show 5 most similar pneumonia cases to this image and explain why they’re similar.”
+* “Find images relevant to ‘consolidation’ and summarize what patterns appear in results.”
+
+(Agent reads retrieved IDs + similarity + thumbnails, then writes analysis.)
+
+---
+
+## Minimal tool list (for applicants)
+
+* `torch`, `transformers` (or model package)
+* `faiss-cpu` (or `faiss-gpu`)
+* `opencv-python` / `PIL`
+* `matplotlib`
+
+---
+
+If you want, I can rewrite your full challenge into a **one-page brief** with the new component included (dataset + objectives + commands + grading rubric), in the exact text you can email to applicants.
+
+[1]: https://huggingface.co/microsoft/BiomedVLP-BioViL-T?utm_source=chatgpt.com "microsoft/BiomedVLP-BioViL-T"
+[2]: https://github.com/RyanWangZf/MedCLIP?utm_source=chatgpt.com "RyanWangZf/MedCLIP: EMNLP'22"
+[3]: https://arxiv.org/abs/2303.07240?utm_source=chatgpt.com "PMC-CLIP: Contrastive Language-Image Pre-training using Biomedical Documents"

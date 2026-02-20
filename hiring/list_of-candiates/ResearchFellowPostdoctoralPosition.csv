@@ -1,0 +1,124 @@
+﻿Entry #,Name - First,Name - Last,Gender,Nationality,Email,Country of the Highest Degree,Name of University which Awarded the Highest Degree,Date of the Highest Awarded
+15,Kheira,Lakhdari,Female,Algeria,keira.lakhdari@ensta.edu.dz,Algeria,University of Tlemcen,"Dec 22, 2020"
+60,Yacine,Hadjadj,Male,Algeria,mail@ycinhdj.com,Algeria,Djillali Liabes Univeristy,"Feb 23, 2025"
+20,Mohammed,Silaa,Male,Algeria,silaa.mohammed.yousri@gmail.com,Algeria,Amar telidji university,"Jun 28, 2021"
+25,Shabbir,Chowdhury,Male,Bangladesh,chowdhuryshabbir99@gmail.com,Australia,RMIT University,"Jun 01, 2026"
+79,Sm Abu,Saleah,Male,Bangladesh,abu.saleah@gmail.com,Korea South,Kyungpook National University,"Feb 17, 2023"
+85,Mohammad,Hasan,Male,Bangladesh,dearmahmud@gmail.com,Norway,Norwegian University of Science and Technology,"Jun 02, 2025"
+42,Muhamed,Albadawi,Male,Egypt,muhamed.albadawi@ucd.ie,Egypt,Egypt Japan university of science and technology,"Feb 21, 2023"
+72,Mostafa,Salah,Male,Egypt,mostafasalah35@gmail.com,Egypt,Ain Shams University,"Mar 29, 2023"
+69,Doaa,Abdel-Fattah,Female,Egypt,doaaysf@niles.edu.eg,Egypt,Cairo Univeristy,"May 29, 2019"
+82,Mohammed,GadAllah,Male,Egypt,mohammed.tag.1986@gmail.com,Egypt,"Faculty of Electronic Engineering, Menoufia University, Menoufia, Egypt","Sep 07, 2025"
+31,Emad,Yacoub,Male,France,yacoub_2002@hotmail.com,France,Roeun University,"Apr 12, 2012"
+52,Ahmad,Goudah,Male,Germany,ahmad.goudah@gmail.com,Germany,Duisburg-Essen,"Feb 20, 2025"
+41,Muhammad Waseem,Tahir,Male,Germany,waseem_tahir21@hotmail.com,Germany,University of Bremen,"Oct 02, 2019"
+27,Sathesh,Ammaiappan,Male,India,sathesh4you@gmail.com,China,Tianjin University,"Jun 27, 2025"
+40,Sathesh,Ammaiappan,Male,India,sathesh4you@gmail.com,China,Tianjin University,"Jun 27, 2025"
+50,Sathesh,Ammaiappan,Male,India,sathesh4you@gmail.com,China,Tianjin University,"Jun 27, 2025"
+71,Atiya,Khan,Female,India,atiyakhan15@gmail.com,India,"MIT - world peace university, Pune, India","Apr 15, 2025"
+55,Rupender,Singh,Male,India,rupendersingh04cs39@gmail.com,India,"Indian Institute of Technology (IIT), Roorkee, India","Aug 27, 2021"
+7,Naved,Alam,Male,India,navedalam@jamiahamdard.ac.in,India,Jamia Millia Islamia,"Dec 12, 2025"
+58,Mohammed,Salman,Male,India,mdsalman.molor@gmail.com,India,VIT University,"Dec 17, 2025"
+67,SOHAIB,SIRWAL,Male,India,sohaibsirwal@gmail.com,India,NIT Srinagar,"Dec 31, 2025"
+21,BAZEER,AHAMED,Male,India,BAZEERAHAMED@GMAIL.COM,India,SATHYABAMA INSTITUTE OF SCIENCE AND TECHNOLOGY,"Feb 16, 2018"
+29,Riyaz,Pathan,Male,India,riyazp4@gmail.com,India,Amity University,"Feb 25, 2025"
+92,Deep,Kothadiya,Male,India,cothadiya.deep@gmail.com,India,Charotar University of Science and Technology,"Jan 04, 2025"
+84,Interplay,Approach,Male,India,janakiramanvc17@gmail.com,India,Chettinad Academy of Research and Education,"Jan 17, 2025"
+100,Sohaib,Sirwal,Male,India,sohaibsirwal@gmail.com,India,NIT Srinagar INDIA,"Jan 21, 2026"
+103,Gopi Krishna,Tiruveedula,Male,India,gktiruveedula@gmail.com,India,Rayalaseema University,"Jul 06, 2023"
+95,Vishal,Vishal,Male,India,vishalhim@yahoo.com,India,Banasthali University bIndia,"Jul 21, 2022"
+76,Mohd,Usama,Male,India,drmohdusama.cs@gmail.com,India,Huazhong University of Science and Technology,"Jun 20, 2020"
+9,Aneesh,M. Koya,Male,India,aneeshkoya@gmail.com,India,National Institute of Technology Calicut (NITC),"Mar 08, 2021"
+90,Tabrez,Qureshi,Male,India,tabrez_phdmech022@nitsri.ac.in,India,"National Institute of Technology, Srinagar, J&K - India","May 16, 2025"
+66,Shaik Mohammed Riyaz,Ahamad,Male,India,riyazroq@gmail.com,India,Rayalaseema University Kurnool,"May 24, 2024"
+62,MOHD,SHALIYAR,Male,India,mohdshaliyar@yahoo.com,India,JAMIA MILLIA ISLMIA,"Nov 06, 2024"
+38,RAFEEK,T,Male,India,rafeekt2007@gmail.com,India,IIT Delhi,"Nov 13, 2021"
+28,Bushara,A R,Female,India,bushara.ar@gmail.com,India,Noorul Islam Centre for Higher Education,"Nov 20, 2024"
+2,Maya,John,Female,India,maya.j.mail@gmail.com,India,NOORUL ISLAM CENTRE FOR HIGHER EDUCATION,"Nov 30, 2018"
+102,Sivakumar,Selvaraju,Male,India,sivakumar81.s@gmail.com,Taiwan,National Taiwan University of Science and Technology,"Jun 30, 2025"
+3,Yousef Adel,Altaharwah,Male,Jordan,altaharwah.y.a@gmail.com,Taiwan,National Taiwan University of Science and Technology,"Jun 22, 2020"
+6,Mo'ath,El-Dalahmeh,Male,Jordan,Mo-ath.El-dalahmeh@warwick.ac.uk,United Kingdom,Teesside University,"Sep 21, 2023"
+17,Abdulkader,Helwan,Male,Lebanon,abdulkader.helwan90@gmail.com,Cyprus,Near East University,"Nov 13, 2018"
+74,Salmane,Douch,Male,Morocco,salmanedouch@gmail.com,Morocco,University Mohamed V in Rabat,"Sep 27, 2025"
+53,Muhammad Muzamil,Aslam,Male,Pakistan,mzmlcn@outlook.com,Brunei,Universiti Brunei Darussalam,"Aug 03, 2026"
+106,Anas,Bilal,Male,Pakistan,a.bilal19@yahoo.com,China,Beijing University of Technology,"Jan 05, 2022"
+1,muhammad Qasim,memon,Male,Pakistan,memon_kasim@yahoo.com,China,Beijing University of Technology,"Jul 12, 2018"
+70,Adnan,Ahmad,Male,Pakistan,info.adnanahmad@mails.ucas.ac.cn,China,University of Chinese Academy of Sciences,"Jul 31, 2026"
+93,Muhammad Usman,Saeed,Male,Pakistan,usaeed534@gmail.com,China,Central South University,"Jun 18, 2025"
+45,Amna,Khatoon,Female,Pakistan,amnakhatoon1701@gmail.com,China,Chang'an University Xi'an,"Jun 19, 2025"
+68,DAWAR,KHAN,Male,Pakistan,dawar.khan977@ymail.com,China,University of Chinese Academy of Sciences,"Jun 24, 2018"
+49,Hassan,Ali,Male,Pakistan,nasaswayali@gmail.com,China,Zhejiang University,"Mar 30, 2017"
+81,Muhammad,Yaqub,Male,Pakistan,myaqubciitswl@gmail.com,China,Beijing University of Technology,"Nov 23, 2023"
+57,Muhammad Tanveer,Hussain,Male,Pakistan,mthussain279@gmail.com,China,University of Science and Technology of China,"Nov 30, 2019"
+46,Muhammad Yasir,Shabir,Male,Pakistan,yasir.shabir14@gmail.com,Italy,University of Turin,"Jul 25, 2025"
+39,Saim,Rasheed,Male,Pakistan,saim_rasheed@hotmail.com,Italy,University of Milan,"Mar 25, 2011"
+12,Khalil,Ullah,Male,Pakistan,khalil.ullah@uom.edu.pk,Italy,Politecnico di Torino,"May 05, 2016"
+30,Muhammad,Adnan,Male,Pakistan,muhammad.adnan.researcher@gmail.com,Italy,University of Genova,"Oct 15, 2025"
+75,Karam,Dad,Male,Pakistan,karamdad.kallu@smme.nust.edu.pk,Korea South,Pusan National University,"Aug 10, 2019"
+23,Rahman,Ali,Male,Pakistan,rehmanali@uop.edu.pk,Korea South,Kyung Hee University,"Aug 17, 2016"
+94,Irshad,Khan,Male,Pakistan,irshad.cs@knu.ac.kr,Korea South,Kyungpook National University,"Feb 18, 2022"
+83,Danish,Jamil,Male,Pakistan,djamil@ssuet.edu.pk,Malaysia,Malaysia University of Engineering and Technology,"Jan 09, 2024"
+96,Abdul,Ahad,Male,Pakistan,ahad9388@gmail.com,Malaysia,Sunway University of Malaysia,"Jun 06, 2022"
+61,MEHMOOD,AHMED,Male,Pakistan,mehmood@uoh.edu.pk,Malaysia,Universiti Tun Hussain Onn Malaysia,"Jun 17, 2025"
+24,Zulfiqar Ali,Khan,Male,Pakistan,zulfiqarmrd@gmail.com,Malaysia,"Universiti Teknologi PETRONAS, Malaysia","Mar 27, 2025"
+80,Sameen,Malik,Male,Pakistan,sameen.ahmed@uet.edu.pk,Malaysia,Universiti Teknologi Malaysia,"Oct 28, 2020"
+34,Jamshed,Ahmad,Male,Pakistan,jam_kust@yahoo.com,Pakistan,University of science and technology bannu KPK Pakistan,"Apr 09, 2025"
+14,Saeed,Iqbal,Male,Pakistan,saeediqbalkhattak@gmail.com,Pakistan,University of Central Punjab,"Aug 02, 2023"
+97,Muhammad,Waseem,Male,Pakistan,m.wasi17@gmail.com,Pakistan,"Univeristy of Engineering and Technology, Lahore","Dec 31, 2026"
+64,sehreen,moorat,Female,Pakistan,sehreen.moorat@lumhs.edu.pk,Pakistan,Mehran University of Engineering and Technology,"Feb 25, 2025"
+88,Bilal,Mushtaq,Male,Pakistan,b.mushtaq@ljmu.ac.uk,Pakistan,Riphah International University,"Jan 05, 2024"
+44,Adeel,Ahmed,Male,Pakistan,adeelmcs@gmail.com,Pakistan,"The Islamia University of Bahawalpur, Pakistan","Jul 14, 2022"
+65,Dr. Ayesha,Habib,Female,Pakistan,drayeshahabib@hotmail.com,Pakistan,University of Engineering and Technology Taxila,"Jun 25, 2018"
+36,Mamuna,Fatima,Female,Pakistan,mamuna.fatima@ciitwah.edu.pk,Pakistan,HITEC University,"Jun 28, 2024"
+26,Qaisar,Alam,Male,Pakistan,qaisaralam96@gmail.com,Pakistan,Hazara University,"Mar 22, 2023"
+105,zartasha,sarwar,Female,Pakistan,zartasha.sarwar.zs@gmail.com,Pakistan,The Women university of Multan Pakistan,"May 14, 2025"
+33,Muhammad,Farhan,Male,Pakistan,farhansajid@gmail.com,Pakistan,University of Engineering and Technology Lahore,"Nov 02, 2017"
+104,Sana,Khan,Male,Pakistan,sana.ullah@kust.edu.pk,Pakistan,"Islamia College Peshawar, Pakistan","Oct 11, 2024"
+87,FAWAD,FAWAD,Male,Pakistan,fawadmsee20@gmail.com,Pakistan,UET taxila,"Oct 15, 2021"
+54,Aliya,Khan,Female,Pakistan,aliya_khaan@hotmail.com,Pakistan,National University of Sciences and Technology,"Sep 22, 2022"
+4,Muhammad,Suhail,Male,Pakistan,Suhailpharmacist26@gmail.com,Taiwan,"Kaohsiung Medical University, Taiwan","Jan 04, 2023"
+73,Shujaat Ali,Zaidi,Male,Pakistan,shujaatxaidi@gmail.com,Thailand,Chiang Mai University,"Dec 30, 2025"
+91,Syed Qasim,Gilani,Male,Pakistan,qasimgilani121@gmail.com,United States,Florida Atlantic University,"Aug 15, 2023"
+99,Farman,Ali,Male,Palau,farman.buic@bahria.edu.pk,China,Nanjing University of Science and Technology,"Jun 07, 2021"
+98,Ayesha,Mukthar,Female,Saudi Arabia,ayeshamukthar17@gmail.com,India,Sri Satya Sai University for Technology and Medical Sciences,"Mar 13, 2022"
+59,Abeer,Alotaibi,Female,Saudi Arabia,a.a.alotaibi@lancaster.ac.uk,United Kingdom,Lancaster University,"Oct 05, 2026"
+63,Bader,Alabkary,Male,Saudi Arabia,alabkarybadereid@gmail.com,United States,Oakland University,"Dec 14, 2024"
+101,Ghazi,Ali,Male,Sudan,ghazi_en87@yahoo.com,China,University of Scenic an Technology Beijing,"Jan 07, 2026"
+89,Aiman,Solyman,Male,Sudan,aiman.solyman@unimi.it,China,South China University of Technology,"Jul 15, 2022"
+78,Manal,Mohamed,Female,Sudan,manalalnosh@gmail.com,Korea South,Gwangju Institute of Science and Technology,"Aug 14, 2025"
+77,Nourelhuda,Mohamed,Female,Sudan,nonoalhodaali@gmail.com,Korea South,Gwangju Institute of Science and Technology,"Aug 14, 2025"
+32,Safaa,Ibrahim,Female,Sudan,safawhb1@gmail.com,Sudan,University of Khartoum,"Sep 15, 2021"
+16,Hana,RABBOUCH,Female,Tunisia,hana_rabbouch@alkawthar.edu.sa,Tunisia,University of Tunis,"Jan 04, 2019"
+22,Lassaad,Zaway,Male,Tunisia,zawaylasaad@gmail.com,Tunisia,"ENIG, University of Gabes","Nov 13, 2024"
+37,kaouther,SELMI,Female,Tunisia,kaouther.selmi@fsm.rnu.tn,Tunisia,Faculty of Science Monastir,"Nov 20, 2024"
+47,Ali,Siddique,Male,United Kingdom,engralisiddique@gmail.com,China,University of Macau,"Jan 10, 2024"
+35,Asadulla,Ashurov,Male,Uzbekistan,asadullahashur@gmail.com,China,Chongqing University of Posts and Telecommunications,"Jun 06, 2023"
+56,Sardor,Mamarasulov,Male,Uzbekistan,mamarasulovsardor@gmail.com,China,East China Normal University,"Jun 12, 2025"
+8,Mehdhar,Al-Gaashani,Male,Yemen,mr.mehdhar@gmail.com,China,Chongqing University of Posts and Telecommunications,"Jun 23, 2023"
+18,Mohammed Mahfoudh,Binjubeir,Male,Yemen,moh77421143@gmail.com,Malaysia,Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA),"Jul 25, 2024"
+13,Amr,Farhan,Male,Yemen,amrfarhan70@gmail.com,Morocco,Hassan First university,"Apr 30, 2025"
+43,Khalil,Abdulghani,Male,Yemen,khalil.ksu@hotmail.com,Saudi Arabia,King Saud University,"May 01, 2025"107,Malak,Ghourabi,,,malakghourabi1@gmail.com,,,,
+108,Owais,Khan,,,owais031@gmail.com,,,,
+109,Ibtihaj,Ahmad Khan,,,ibtihajahmadkhan@gmail.com,,,,
+110,Binish,Zahra,,,s.binishzahra@gmail.com,,,,
+111,Zaka,Ahmad,,,zaka.mmu.my@gmail.com,,,,
+112,Ola,Surakhi,,,ola.surakhi@gmail.com,,,,
+113,M.,Toseef,,,mtoseef2-c@my.cityu.edu.hk,,,,
+114,A.,Aboessa,,,aaboessa@psu.edu.sa,,,,
+115,Syrine,Nebli,,,syrine.nebli@cbs.rnrt.tn,,,,
+116,Hamza,Gbada,,,hamza.gbada@gmail.com,,,,
+117,Madiha,Tahir,,,madihatahir16@gmail.com,,,,
+118,Ahmed,Hamdi,,,ahmed.hamdi@univ-fcomte.fr,,,,
+119,Irshad,Khan,,,irshad.khaan@gmail.com,,,,
+120,Maisam,E,,,maisamee56@gmail.com,,,,
+121,S.,Prabu,,,sprabumecse@gmail.com,,,,
+122,Ahmed,Sal,,,ahmed.sal.bme@gmail.com,,,,
+123,Adeel,Asghar,,,adeel_asghar21@yahoo.com,,,,
+124,Sohaib,Latif,,,sohaiblatif095@gmail.com,,,,
+125,Saeed,Iqbal Khattak,,,saeediqbalkhattak@gmail.com,,,,
+126,Nitasha,Khan,,,khannitasha@ymail.com,,,,
+127,Alam,Noor,,,eng.alamnoor@gmail.com,,,,
+128,Neelum,Younis,,,neelumyounis32@gmail.com,,,,
+129,Hiba,Ghrab,,,hiba.ghrab@etudiant-enit.utm.tn,,,,
+130,John,Doe,,,john.doe@email.com,,,,
+131,Moteaibir,Al-Aibir,,,moteaibir@ust.edu.ye,,,,

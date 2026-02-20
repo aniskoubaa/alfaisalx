@@ -1,0 +1,258 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+
+% Colors
+\definecolor{primary}{RGB}{167, 139, 250}
+\definecolor{secondary}{RGB}{14, 165, 233}
+\definecolor{darkbg}{RGB}{15, 23, 42}
+\definecolor{lighttext}{RGB}{148, 163, 184}
+\definecolor{accent}{RGB}{192, 132, 252}
+\definecolor{darkblue}{RGB}{30, 58, 95}
+
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary
+}
+
+% Section formatting
+\titleformat{\section}
+    {\Large\bfseries\color{primary}}
+    {}
+    {0em}
+    {}[\titlerule]
+
+\titleformat{\subsection}
+    {\large\bfseries\color{darkbg}}
+    {}
+    {0em}
+    {}
+
+% Header/Footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small\color{lighttext} AlfaisalX -- Alfaisal University, Riyadh, Saudi Arabia \quad | \quad Page \thepage}
+
+% Custom boxes
+\newtcolorbox{highlightbox}{
+    colback=primary!5,
+    colframe=primary,
+    boxrule=0.5pt,
+    arc=4pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt
+}
+
+\newtcolorbox{aboutbox}{
+    colback=darkblue!8,
+    colframe=darkblue,
+    boxrule=0.5pt,
+    arc=4pt,
+    left=10pt,
+    right=10pt,
+    top=8pt,
+    bottom=8pt
+}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\Huge\bfseries\color{darkbg} AlfaisalX}\\[4pt]
+    {\large\color{lighttext} Alfaisal Center for Robotics and Autonomous Agents}\\[20pt]
+    
+    \begin{tikzpicture}
+        \fill[primary] (0,0) rectangle (16,0.1);
+    \end{tikzpicture}
+    
+    \vspace{20pt}
+    
+    {\LARGE\bfseries\color{darkbg} Postdoctoral Researcher}\\[6pt]
+    {\Large\color{primary} Robotics \& Autonomous Systems}\\[12pt]
+    {\large\color{secondary} \faIcon{building} Autonomous Systems Lab \quad | \quad \faIcon{map-marker-alt} Riyadh, Saudi Arabia}\\[8pt]
+    {\color{accent}\faIcon{user-graduate} Postdoctoral Fellowship}
+\end{center}
+
+\vspace{15pt}
+
+% About AlfaisalX
+\section{About AlfaisalX}
+
+\begin{aboutbox}
+\textbf{AlfaisalX} (Alfaisal Center for Robotics and Autonomous Agents) is a newly established \textbf{Center of Excellence} at Alfaisal University, dedicated to advancing the frontiers of cognitive robotics, autonomous systems, and artificial intelligence. Our mission is to drive innovation, develop cutting-edge technologies, and cultivate the next generation of AI and robotics leaders in alignment with \textbf{Saudi Vision 2030}.
+
+\vspace{8pt}
+
+\textbf{Alfaisal University}, located in Riyadh, is one of the leading private research universities in the Middle East, known for its strong emphasis on research excellence and industry partnerships. The \textbf{College of Engineering} houses state-of-the-art laboratories, including dedicated robotics labs, UAV testing facilities, and high-performance computing infrastructure.
+
+\vspace{8pt}
+
+\textbf{Our Research Focus Areas:}
+\begin{itemize}[leftmargin=15pt, itemsep=2pt, topsep=4pt]
+    \item Agentic AI \& Large Language Models for Business Automation
+    \item Robotics, UAVs \& Autonomous Ground/Aerial Systems
+    \item Medical \& Health Robotics (Surgery, Rehabilitation, Medical Imaging)
+    \item Cloud Robotics \& Multi-Robot Systems
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Industry Partners:} HUMAIN, Bako Motors, Tawuniya, Prince Sultan Defense Studies \& Research Center
+\end{aboutbox}
+
+\vspace{15pt}
+
+% About the Position
+\section{About the Position}
+
+AlfaisalX invites applications for a prestigious \textbf{Postdoctoral Researcher} position in Robotics and Autonomous Systems. This is an exceptional opportunity for an ambitious early-career researcher to establish themselves as a leader in the rapidly evolving field of autonomous robotics.
+
+The successful candidate will conduct cutting-edge research in one or more of our strategic focus areas: \textbf{medical robotics}, \textbf{self-driving vehicles}, \textbf{UAV systems}, and \textbf{reinforcement learning-based control}. You will have the freedom to pursue innovative research directions while contributing to the center's mission of developing transformative technologies.
+
+As a Postdoctoral Researcher at AlfaisalX, you will work in a collaborative, interdisciplinary environment alongside world-renowned faculty members who have published extensively in top-tier venues such as ICRA, IROS, RA-L, and CoRL. You will have access to cutting-edge equipment including autonomous vehicle platforms, surgical robot simulators, UAV fleets, and high-performance GPU clusters for deep learning research.
+
+This fellowship offers exceptional benefits including a competitive salary, generous research funding, international conference travel support, and a \textbf{clear pathway to a faculty position} for outstanding candidates. You will also have opportunities to collaborate with our industry partners on applied research projects with real-world impact.
+
+We are particularly interested in candidates who can bridge theoretical advances with practical implementations and who are passionate about mentoring the next generation of robotics researchers.
+
+\vspace{15pt}
+
+% Research Areas Box
+\begin{highlightbox}
+\centering
+{\large\bfseries\color{primary} Research Focus Areas}\\[10pt]
+\begin{tabular}{cccc}
+    \faIcon{hospital} Medical Robotics & 
+    \faIcon{car} Self-Driving Vehicles & 
+    \faIcon{drone} UAV Systems & 
+    \faIcon{brain} Reinforcement Learning
+\end{tabular}
+\end{highlightbox}
+
+\vspace{15pt}
+
+% Key Responsibilities
+\section{Key Responsibilities}
+
+\begin{itemize}[leftmargin=20pt, itemsep=6pt]
+    \item[\faIcon{search}] Conduct independent and collaborative research in autonomous systems
+    \item[\faIcon{heartbeat}] Develop novel algorithms for medical robotics and surgical systems
+    \item[\faIcon{car-side}] Design and implement autonomous navigation for self-driving vehicles
+    \item[\faIcon{brain}] Apply reinforcement learning to robotic control problems
+    \item[\faIcon{file-alt}] Publish research findings in top-tier venues (ICRA, IROS, RA-L, CoRL)
+    \item[\faIcon{chalkboard-teacher}] Mentor graduate students and research assistants
+    \item[\faIcon{hand-holding-usd}] Contribute to grant proposals and funding applications
+\end{itemize}
+
+\vspace{15pt}
+
+% Requirements
+\section{Required Qualifications}
+
+\begin{itemize}[leftmargin=20pt, itemsep=6pt]
+    \item \textbf{Ph.D. in Robotics, Autonomous Systems}, Computer Science, or related field
+    \item Strong publication record in top venues (\textbf{ICRA, IROS, RA-L, CoRL, RSS})
+    \item Demonstrated experience with autonomous navigation and perception
+    \item Proficiency in Python, C++, and deep learning frameworks (PyTorch/TensorFlow)
+    \item Background in reinforcement learning for robotics
+    \item Excellent written and verbal communication skills
+    \item Ability to work independently and collaboratively
+\end{itemize}
+
+\vspace{15pt}
+
+% Preferred
+\section{Preferred Qualifications}
+
+\begin{itemize}[leftmargin=20pt, itemsep=6pt]
+    \item Experience with medical robotics or surgical systems
+    \item Background in self-driving car technologies (CARLA, LGSVL, Autoware)
+    \item Knowledge of real-time control systems and embedded platforms
+    \item Experience with sim-to-real transfer and domain adaptation
+    \item Track record of successful industry collaborations
+    \item Experience supervising students or junior researchers
+\end{itemize}
+
+\vspace{15pt}
+
+% Benefits
+\section{What We Offer}
+
+\begin{highlightbox}
+\begin{itemize}[leftmargin=15pt, itemsep=5pt]
+    \item[\faIcon{money-bill-wave}] Competitive postdoctoral salary (tax-free in Saudi Arabia)
+    \item[\faIcon{coins}] Generous research budget and travel support
+    \item[\faIcon{building}] Access to world-class robotics facilities and equipment
+    \item[\faIcon{lightbulb}] Opportunity to lead independent research projects
+    \item[\faIcon{star}] \textbf{Clear pathway to faculty position} for exceptional candidates
+    \item[\faIcon{plane}] International conference travel fully supported
+    \item[\faIcon{home}] Housing allowance and relocation support
+\end{itemize}
+\end{highlightbox}
+
+\vspace{20pt}
+
+% How to Apply
+\section{How to Apply}
+
+Interested candidates should submit the following documents to \textbf{\href{mailto:alfaisalx@alfaisal.edu}{alfaisalx@alfaisal.edu}}:
+
+\begin{enumerate}[leftmargin=20pt, itemsep=4pt]
+    \item Updated CV with complete publication list and Google Scholar link
+    \item Research statement (2-3 pages) outlining past work and future research vision
+    \item Cover letter explaining your interest in the position and fit with AlfaisalX
+    \item Three representative publications (preferably first-author)
+    \item Contact information for 3 academic references
+\end{enumerate}
+
+\vspace{15pt}
+
+\begin{center}
+    \begin{tcolorbox}[
+        colback=secondary!10,
+        colframe=secondary,
+        width=0.8\textwidth,
+        arc=6pt,
+        boxrule=1pt
+    ]
+        \centering
+        {\large\bfseries\color{secondary} Apply Now}\\[8pt]
+        {\faIcon{envelope} \href{mailto:alfaisalx@alfaisal.edu}{alfaisalx@alfaisal.edu}}\\[5pt]
+        {\small Subject: Application -- Postdoc in Robotics \& Autonomous Systems}
+    \end{tcolorbox}
+\end{center}
+
+\vspace{15pt}
+
+% Footer info
+\begin{center}
+    \color{lighttext}
+    \rule{0.6\textwidth}{0.5pt}\\[10pt]
+    {\small AlfaisalX is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.}\\[10pt]
+    \faIcon{globe} \href{https://alfaisalx.alfaisal.edu}{alfaisalx.alfaisal.edu} \quad | \quad
+    \faIcon{map-marker-alt} Alfaisal University, Riyadh, KSA
+\end{center}
+
+\end{document}
+
+
+
+
+

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Preview - AlfaisalX</title>
+    
+    <!-- All Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0a1628;
+            color: #e2e8f0;
+            padding: 40px;
+            line-height: 1.6;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .page-title h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #00d4ff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        
+        .page-title p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .font-option {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(71, 85, 105, 0.5);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .font-option:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
+        }
+        
+        .option-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(71, 85, 105, 0.5);
+        }
+        
+        .option-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #00d4ff, #a855f7);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0a1628;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .option-title {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .option-title h3 {
+            font-size: 1.2rem;
+            color: #f1f5f9;
+        }
+        
+        .option-title .fonts {
+            font-size: 0.85rem;
+            color: #00d4ff;
+        }
+        
+        .preview-content {
+            margin-bottom: 20px;
+        }
+        
+        .preview-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #64748b;
+            margin-bottom: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .preview-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #f8fafc;
+        }
+        
+        .preview-subheading {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+        
+        .preview-body {
+            font-size: 1rem;
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #00d4ff;
+            font-family: 'Inter', sans-serif;
+            margin-left: 10px;
+        }
+        
+        /* Option 1: Space Grotesk + Inter */
+        .option-1 .preview-heading,
+        .option-1 .preview-subheading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .option-1 .preview-body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Option 2: Sora + DM Sans */
+        .option-2 .preview-heading,
+        .option-2 .preview-subheading {
+            font-family: 'Sora', sans-serif;
+        }
+        .option-2 .preview-body {
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        /* Option 3: Plus Jakarta Sans */
+        .option-3 .preview-heading,
+        .option-3 .preview-subheading,
+        .option-3 .preview-body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        /* Option 4: Outfit + Source Sans 3 */
+        .option-4 .preview-heading,
+        .option-4 .preview-subheading {
+            font-family: 'Outfit', sans-serif;
+        }
+        .option-4 .preview-body {
+            font-family: 'Source Sans 3', sans-serif;
+        }
+        
+        /* Option 5: Manrope */
+        .option-5 .preview-heading,
+        .option-5 .preview-subheading,
+        .option-5 .preview-body {
+            font-family: 'Manrope', sans-serif;
+        }
+        
+        .nav-preview {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 10px;
+            border: 1px solid rgba(71, 85, 105, 0.3);
+        }
+        
+        .nav-preview span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #94a3b8;
+        }
+        
+        /* Option 1 nav */
+        .option-1 .nav-preview span { font-family: 'Inter', sans-serif; }
+        .option-2 .nav-preview span { font-family: 'DM Sans', sans-serif; }
+        .option-3 .nav-preview span { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .option-4 .nav-preview span { font-family: 'Source Sans 3', sans-serif; }
+        .option-5 .nav-preview span { font-family: 'Manrope', sans-serif; }
+        
+        .vote-section {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(30, 41, 59, 0.3);
+            border-radius: 16px;
+            border: 1px solid rgba(71, 85, 105, 0.3);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .vote-section h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .vote-section p {
+            font-family: 'Inter', sans-serif;
+            color: #94a3b8;
+        }
+        
+        @media (max-width: 600px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            body {
+                padding: 20px;
+            }
+            
+            .preview-heading {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-title">
+        <h1>🔤 Font Preview for AlfaisalX</h1>
+        <p>Compare different font combinations for your Robotics & AI Center of Excellence</p>
+    </div>
+    
+    <div class="options-grid">
+        <!-- Option 1: Space Grotesk + Inter -->
+        <div class="font-option option-1">
+            <div class="option-header">
+                <div class="option-number">1</div>
+                <div class="option-title">
+                    <h3>Space Grotesk + Inter <span class="badge">Recommended</span></h3>
+                    <div class="fonts">Headings: Space Grotesk • Body: Inter</div>
+                </div>
+            </div>
+            
+            <div class="nav-preview">
+                <span>Home</span>
+                <span>About</span>
+                <span>Research</span>
+                <span>Team</span>
+                <span>Contact</span>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Hero Heading</div>
+                <h2 class="preview-heading">Pioneering Cognitive Robotics & Autonomous Agents</h2>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Section Title</div>
+                <h3 class="preview-subheading">Research Areas & Innovation</h3>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Body Text</div>
+                <p class="preview-body">Driving global innovation through the convergence of robotics, UAVs, and agentic AI workflows. We bridge academic research and industrial transformation aligned with Saudi Vision 2030.</p>
+            </div>
+        </div>
+        
+        <!-- Option 2: Sora + DM Sans -->
+        <div class="font-option option-2">
+            <div class="option-header">
+                <div class="option-number">2</div>
+                <div class="option-title">
+                    <h3>Sora + DM Sans</h3>
+                    <div class="fonts">Headings: Sora • Body: DM Sans</div>
+                </div>
+            </div>
+            
+            <div class="nav-preview">
+                <span>Home</span>
+                <span>About</span>
+                <span>Research</span>
+                <span>Team</span>
+                <span>Contact</span>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Hero Heading</div>
+                <h2 class="preview-heading">Pioneering Cognitive Robotics & Autonomous Agents</h2>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Section Title</div>
+                <h3 class="preview-subheading">Research Areas & Innovation</h3>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Body Text</div>
+                <p class="preview-body">Driving global innovation through the convergence of robotics, UAVs, and agentic AI workflows. We bridge academic research and industrial transformation aligned with Saudi Vision 2030.</p>
+            </div>
+        </div>
+        
+        <!-- Option 3: Plus Jakarta Sans -->
+        <div class="font-option option-3">
+            <div class="option-header">
+                <div class="option-number">3</div>
+                <div class="option-title">
+                    <h3>Plus Jakarta Sans</h3>
+                    <div class="fonts">All text: Plus Jakarta Sans</div>
+                </div>
+            </div>
+            
+            <div class="nav-preview">
+                <span>Home</span>
+                <span>About</span>
+                <span>Research</span>
+                <span>Team</span>
+                <span>Contact</span>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Hero Heading</div>
+                <h2 class="preview-heading">Pioneering Cognitive Robotics & Autonomous Agents</h2>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Section Title</div>
+                <h3 class="preview-subheading">Research Areas & Innovation</h3>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Body Text</div>
+                <p class="preview-body">Driving global innovation through the convergence of robotics, UAVs, and agentic AI workflows. We bridge academic research and industrial transformation aligned with Saudi Vision 2030.</p>
+            </div>
+        </div>
+        
+        <!-- Option 4: Outfit + Source Sans 3 -->
+        <div class="font-option option-4">
+            <div class="option-header">
+                <div class="option-number">4</div>
+                <div class="option-title">
+                    <h3>Outfit + Source Sans 3</h3>
+                    <div class="fonts">Headings: Outfit • Body: Source Sans 3</div>
+                </div>
+            </div>
+            
+            <div class="nav-preview">
+                <span>Home</span>
+                <span>About</span>
+                <span>Research</span>
+                <span>Team</span>
+                <span>Contact</span>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Hero Heading</div>
+                <h2 class="preview-heading">Pioneering Cognitive Robotics & Autonomous Agents</h2>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Section Title</div>
+                <h3 class="preview-subheading">Research Areas & Innovation</h3>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Body Text</div>
+                <p class="preview-body">Driving global innovation through the convergence of robotics, UAVs, and agentic AI workflows. We bridge academic research and industrial transformation aligned with Saudi Vision 2030.</p>
+            </div>
+        </div>
+        
+        <!-- Option 5: Manrope -->
+        <div class="font-option option-5">
+            <div class="option-header">
+                <div class="option-number">5</div>
+                <div class="option-title">
+                    <h3>Manrope</h3>
+                    <div class="fonts">All text: Manrope</div>
+                </div>
+            </div>
+            
+            <div class="nav-preview">
+                <span>Home</span>
+                <span>About</span>
+                <span>Research</span>
+                <span>Team</span>
+                <span>Contact</span>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Hero Heading</div>
+                <h2 class="preview-heading">Pioneering Cognitive Robotics & Autonomous Agents</h2>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Section Title</div>
+                <h3 class="preview-subheading">Research Areas & Innovation</h3>
+            </div>
+            
+            <div class="preview-content">
+                <div class="preview-label">Body Text</div>
+                <p class="preview-body">Driving global innovation through the convergence of robotics, UAVs, and agentic AI workflows. We bridge academic research and industrial transformation aligned with Saudi Vision 2030.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="vote-section">
+        <h2>🎯 Which font do you prefer?</h2>
+        <p>Tell me the option number (1-5) and I'll implement it on the website!</p>
+    </div>
+</body>
+</html>
+
+
+
+
+
