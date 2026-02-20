@@ -156,7 +156,9 @@ $params = [
     'q' => $query,
     'api_key' => $apiKey,
     'as_ylo' => $yearFrom,
-    'num' => $num
+    'num' => $num,
+    'hl' => 'en',
+    'no_cache' => 'true'
 ];
 
 if ($yearTo) {

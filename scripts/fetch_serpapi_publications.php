@@ -161,7 +161,9 @@ class SerpApiPublicationFetcher {
             'api_key' => $this->apiKey,
             'as_ylo' => $this->targetYear, // Year low (from)
             'num' => $num,
-            'start' => $start
+            'start' => $start,
+            'hl' => 'en',
+            'no_cache' => 'true'
         ];
         
         $url = $this->baseUrl . '?' . http_build_query($params);
